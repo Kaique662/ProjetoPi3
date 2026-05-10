@@ -1,0 +1,95 @@
+    .page {
+      display: flex;
+      min-height: calc(100vh - 100px);
+      animation: fadeIn 0.35s ease;
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      min-height: 100%;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      padding: 20px 0;
+      flex-shrink: 0;
+    }
+
+    .sidebar-section {
+      padding: 0 16px;
+    }
+
+    .sidebar-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-list {
+      list-style: none;
+    }
+
+    .sidebar-list li a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-bottom: 2px;
+    }
+
+    .sidebar-list li a:hover,
+    .sidebar-list li a.active {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      padding: 24px;
+    }
+
+    .content-header {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .loading-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .skeleton-card {
+      border-radius: 10px;
+      background: var(--bg-card);
+      aspect-ratio: 3/4;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

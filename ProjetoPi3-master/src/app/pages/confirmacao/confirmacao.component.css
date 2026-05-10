@@ -1,0 +1,93 @@
+.page {
+      min-height: calc(100vh - 100px);
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .btn-voltar {
+      align-self: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 0;
+      transition: border-color 0.2s;
+    }
+
+    .btn-voltar:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+    .confirmacao-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .icon-check {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--accent-cyan);
+      margin-bottom: 28px;
+      animation: popIn 0.4s ease;
+    }
+
+    .mensagem {
+      font-size: 16px;
+      color: var(--text-primary);
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .sub-mensagem {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 420px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .btn-voltar-home {
+      background: var(--accent-purple);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 32px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-voltar-home:hover { background: var(--accent-purple-light); }
+
+    .footer-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+      border-radius: 2px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }

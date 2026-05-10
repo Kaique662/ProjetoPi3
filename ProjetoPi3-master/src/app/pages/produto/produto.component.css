@@ -1,0 +1,172 @@
+.page {
+      padding: 30px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .btn-voltar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: border-color 0.2s;
+    }
+
+    .btn-voltar:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+    .produto-layout {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .produto-imagem {
+      width: 300px;
+      min-width: 300px;
+      aspect-ratio: 1/1;
+      background: var(--bg-card);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .produto-imagem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--bg-card-hover), #1a2340);
+    }
+
+    .img-placeholder span { font-size: 60px; }
+    .img-placeholder p { font-size: 14px; color: var(--text-muted); }
+
+    .produto-info {
+      flex: 1;
+    }
+
+    .produto-nome {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .produto-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .badge.chave { background: var(--accent-cyan); color: #000; }
+    .badge.conta { background: var(--accent-purple); color: #fff; }
+    .badge.gift { background: var(--accent-yellow); color: #000; }
+
+    .estoque {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .produto-preco {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 22px;
+    }
+
+    .btn-comprar {
+      background: var(--accent-cyan);
+      color: #000;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 12px 40px;
+      border-radius: 30px;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, transform 0.1s;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .btn-comprar:hover { opacity: 0.85; }
+    .btn-comprar:active { transform: scale(0.97); }
+    .btn-comprar:disabled {
+      background: #2a4a2a;
+      color: #6fd96f;
+      cursor: default;
+    }
+
+    .pagamento-info {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .pagamento-titulo {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .pagamento-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .metodos-pagamento {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .sep { color: var(--border-color); }
+
+    .not-found, .loading {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

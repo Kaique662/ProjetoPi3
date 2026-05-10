@@ -1,0 +1,67 @@
+<div class="page">
+  <div class="carrinho-layout">
+    <!-- Lista de itens -->
+    <div class="itens-section">
+      <div *ngIf="cartService.itens().length === 0" class="empty-cart">
+        <span class="empty-icon">🛒</span>
+        <p>Seu carrinho está vazio</p>
+        <a routerLink="/" class="btn-continuar-vazio">Ver produtos</a>
+      </div>
+
+      <div *ngFor="let item of cartService.itens()" class="item-card">
+        <div class="item-img">
+          <img 
+            *ngIf="item.produto.imagemUrl" 
+            [src]="item.produto.imagemUrl" 
+            [alt]="item.produto.nome" 
+          />
+          <div *ngIf="!item.produto.imagemUrl" class="img-placeholder">🎮</div>
+        </div>
+
+        <div class="item-info">
+          <p class="item-nome">"{{ item.produto.nome }}"</p>
+          <p class="item-preco">R$ {{ item.produto.preco | number:'1.2-2' }}</p>
+          <div class="item-actions">
+            <button class="btn-acao excluir" (click)="remover(item.produto.id)">
+              excluir
+            </button>
+            <span class="sep">|</span>
+            <button class="btn-acao salvar">salvar para mais tarde</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="cartService.itens().length > 0" class="continuar-bar">
+        <a routerLink="/" class="btn-continuar">Continuar comprando</a>
+      </div>
+    </div>
+
+    <!-- Resumo/Checkout -->
+    <div class="checkout-section" *ngIf="cartService.itens().length > 0">
+      <div class="checkout-card">
+        <div class="checkout-info">
+          <p class="checkout-label">"explicar como funciona método de pagamento"</p>
+          <p class="checkout-desc">
+            Após confirmar o pedido, você receberá sua chave ou acesso à conta no e-mail cadastrado.
+          </p>
+        </div>
+
+        <div class="checkout-total">
+          <div class="total-row">
+            <span>Subtotal ({{ cartService.totalItems() }} itens)</span>
+            <span>R$ {{ cartService.totalPreco() | number:'1.2-2' }}</span>
+          </div>
+          <div class="total-divider"></div>
+          <div class="total-row total-final">
+            <span>Total</span>
+            <span>R$ {{ cartService.totalPreco() | number:'1.2-2' }}</span>
+          </div>
+        </div>
+
+        <button class="btn-comprar" (click)="finalizar()" [disabled]="processando">
+          {{ processando ? 'Processando...' : 'Comprar' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

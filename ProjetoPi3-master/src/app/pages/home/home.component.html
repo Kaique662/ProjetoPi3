@@ -1,0 +1,31 @@
+<div class="page">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <p class="sidebar-title">jogos</p>
+          <ul class="sidebar-list">
+            <li *ngFor="let cat of categorias">
+              <a (click)="filtrarCategoria(cat.valor)" [class.active]="categoriaAtiva() === cat.valor">
+                {{ cat.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="content-header">
+          <h2 class="section-title">
+            <ng-container *ngIf="authService.isLoggedIn()">Upar conta ou Comprar chaves</ng-container>
+            <ng-container *ngIf="!authService.isLoggedIn()">Destaques</ng-container>
+          </h2>
+        </div>
+
+        <div *ngIf="carregando()" class="loading-grid">
+          <div *ngFor="let n of [1,2,3,4,5,6,7,8]" class="skeleton-card"></div>
+        </div>
+
+        <div *ngIf="!carregando()" class="produtos-grid">
+          <app-produto-card *ngFor="let p of produtos()" [produto]="p"></app-produto-card>
+        </div>
+      </main>
+    </div>

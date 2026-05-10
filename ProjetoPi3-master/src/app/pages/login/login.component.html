@@ -1,0 +1,66 @@
+<div class="login-page">
+      <div class="cards-wrapper">
+
+        <!-- Card Login -->
+        <div class="card" [class.active]="!modoRegistro()">
+          <h2 class="card-title">Entra na sua conta</h2>
+
+          <div class="field">
+            <input
+              type="email"
+              placeholder="email"
+              [(ngModel)]="email"
+              [disabled]="carregando()"
+            />
+          </div>
+
+          <div class="field">
+            <input
+              type="password"
+              placeholder="Senha"
+              [(ngModel)]="senha"
+              [disabled]="carregando()"
+              (keyup.enter)="fazerLogin()"
+            />
+          </div>
+
+          <div *ngIf="erro()" class="erro-msg">{{ erro() }}</div>
+
+          <div class="card-actions">
+            <button class="btn-ghost" (click)="modoRegistro.set(true)">esqueceu senha</button>
+            <button class="btn-primary" (click)="fazerLogin()" [disabled]="carregando()">
+              <span *ngIf="!carregando()">Avançar</span>
+              <span *ngIf="carregando()">...</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider-vertical"></div>
+
+        <!-- Card Registro -->
+        <div class="card" [class.active]="modoRegistro()">
+          <h2 class="card-title">Crie sua conta</h2>
+
+          <div class="field">
+            <input
+              type="email"
+              placeholder="email"
+              [(ngModel)]="emailRegistro"
+              [disabled]="carregando()"
+            />
+          </div>
+
+          <button class="btn-block" (click)="receberCodigo()" [disabled]="carregando()">
+            receber codigo
+          </button>
+
+          <button class="btn-block btn-ghost-block" (click)="receberLinkMagico()" [disabled]="carregando()">
+            receber link magico
+          </button>
+
+          <p class="voltar-login">
+            Já tem conta? <a (click)="modoRegistro.set(false)">Entrar</a>
+          </p>
+        </div>
+      </div>
+    </div>
