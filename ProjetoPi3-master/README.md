@@ -1,5 +1,8 @@
 # 🔑 GetKey - Frontend Angular
 
+TESTE
+
+
 Plataforma para compra de chaves de jogos e account boosting.
 
 ## Tecnologias
